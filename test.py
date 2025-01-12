@@ -1,10 +1,10 @@
 import requests
 
 def test_query_webpage():
-    url = "http://localhost:8000/query_webpage/"
+    url = "http://localhost:8000/query_webpage_rag/"
     test_data = {
         "url": "https://www.papowerswitch.com/shop-for-rates-results/?zipcode=19050&serviceType=residential&distributor=1182&distributorrate=R+-+Regular+Residential+Service",
-        "query": "What is the cheapest supplier?"
+        "query": "Which supplier has the cheapest rate and what is the estimated monthly cost for it?"
     }
     
     response = requests.post(url, json=test_data)
