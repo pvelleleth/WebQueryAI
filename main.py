@@ -13,7 +13,10 @@ app = FastAPI()
 embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
 
 # Initialize Cohere client
-co = cohere.Client("lZpVs6UyeDTGIjKqtud9Fi778WX4BMuyDzyBPbZ0")
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables from .env file
+co = cohere.Client(os.getenv("COHERE_API_KEY"))
 
 
 # Function to fetch and clean webpage content
