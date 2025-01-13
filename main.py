@@ -99,6 +99,9 @@ class QueryRequest(BaseModel):
     url: str
     query: str
 
+@app.get("/")
+async def root():
+    return {"message": "Test Deployment"}
 
 # API endpoint for querying a webpage with RAG
 @app.post("/query_webpage_rag/")
